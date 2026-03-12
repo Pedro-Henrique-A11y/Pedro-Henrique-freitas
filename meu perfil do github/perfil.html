@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Guilherme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .subtitle {
+            color: #00d9ff;
+            font-size: 1.3em;
+            text-align: center;
+            margin-bottom: 30px;
+            min-height: 30px;
+        }
+
+        .typing {
+            border-right: 3px solid #00d9ff;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: #00d9ff;
+            }
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .section {
+            margin: 30px 0;
+            animation: fadeIn 1s ease-in-out both;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h2 {
+            color: #00d9ff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #00d9ff;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(0, 217, 255, 0);
+            }
+        }
+
+        .item {
+            color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 3px solid #00d9ff;
+            padding-left: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .item:hover {
+            transform: translateX(10px);
+            background: rgba(0, 217, 255, 0.1);
+            border-left-color: #ff00ff;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            animation: spin 3s linear infinite;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: scale(1.1);
+        }
+
+        @keyframes spin {
+            0% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .heart {
+            color: #ff5477;
+            animation: heartbeat 1.3s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.3);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: #ff00ff;
+            text-shadow: 0 0 10px #00d9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👋 Olá, eu sou Pedro Henrique!</h1>
+        
+        <div class="subtitle">
+            <span class="typing">Estudante de ADS | Desenvolvedor Front-End</span>
+        </div>
+
+        <div class="section">
+            <h2>Sobre Mim</h2>
+            <div class="item">� Estudante de Análise e Desenvolvimento de Sistemas</div>
+            <div class="item">💻 Focado em Desenvolvimento Front-End</div>
+            <div class="item">🚀 Apaixonado por criar interfaces modernas e funcionais</div>
+            <div class="item">🌱 Em constante aprendizado na área de tecnologia</div>
+            <div class="item">💡 Praticando programação e construindo projetos</div>
+        </div>
+
+        <div class="section">
+            <h2>Tecnologias</h2>
+            <div class="tech-badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Git</span>
+                <span class="badge">GitHub</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Objetivos</h2>
+            <div class="item">⭐ Evoluir minhas habilidades em Front-End</div>
+            <div class="item">🛠️ Criar projetos práticos para meu portfólio</div>
+            <div class="item">🤝 Contribuir com projetos e aprender com a comunidade</div>
+            <div class="item">🎓 Me tornar um desenvolvedor profissional</div>
+        </div>
+
+        <div class="footer">
+            <p>Feito com <span class="heart">❤️</span> por Pedro Henrique</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: rgba(255,255,255,0.8);">Sempre aprendendo algo novo e buscando evoluir na área de tecnologia</p>
+            <div class="social-links">
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Email</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
